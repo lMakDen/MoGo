@@ -1,0 +1,257 @@
+doctype html
+html(lang="ru-RU")
+	head
+		title MoGo
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" href="css/main.css")
+	body
+		mixin begining_block(description,name)
+			h4(class="begining__description")=description
+			h3(class="begining__name")=name
+			.stick
+		mixin employees()
+			.blind
+				.employees__content
+					.employees__item
+						a(class="employees__link" href="https://www.facebook.com/" target="_blank")
+							i(class="fa fa-facebook employees__embl" aria-hidden="true")
+					.employees__item
+						a(class="employees__link" href="https://twitter.com" target="_blank")
+							i(class="fa fa-twitter employees__embl" aria-hidden="true")
+					.employees__item
+						a(class="employees__link" href="https://vk.com" target="_blank")
+							i(class="fa fa-vk employees__embl" aria-hidden="true")
+					.employees__item
+						a(class="employees__link" href="https://www.instagram.com/" target="_blank")
+							i(class="fa fa-instagram employees__embl" aria-hidden="true")
+		mixin Reviews(parametr,name,profession,content)
+			li(class="Reviews__block")
+						div(class=parametr)
+						.Reviews__comment
+							h3(class="Reviews__name")=name
+							h4(class="Reviews__profession")=profession
+							div(class="Reviews__stick stick")
+							p(class="Reviews__content")=content
+		mixin story(parametr, num, name, head, story, views, comment)
+			.l_block__content
+					div(class=parametr)
+						.l_block__number
+							.l_block__number_content
+								span(class="l_block__num")!=num+'<br>'
+								span(class="l_block__name")=name
+					h4(class="l_block__head")=head
+					p(class="l_block__story")=story
+					ul(class="l_block__bottom")
+						li(class="l_block__bottom_element")
+							img(src="img/latest_blog/view.png" alt="error")
+						li(class="l_block__bottom_element")=views
+						li(class="l_block__bottom_element")
+							img(src="img/latest_blog/speak.png" alt="error")
+						li(class="l_block__bottom_element")=comment
+		section(class="mainMenu")
+			.container
+				.mainMenu__menu
+						a(href="#" class="mainMenu__MoGo") MoGo
+						button(class="mob__btn" id="mob__btn")
+							img(class="mob__btn_img" src="img/menu.svg" alt="")
+						ul(class="mainMenu__ul-menu" id="nav")
+							for name in ["ABOUT","SERVICE","WORK","BLOG","CONTACT"]
+								li(class="mainMenu__ul-menu__btn")
+									a(href="#" class="mainMenu__link") #{name}
+							li(class="mainMenu__ul-menu__btn")
+								a(href="#" class="mainMenu__link")
+									img(src="img/Shopping_cart.png" alt="error")
+							li(class="mainMenu__ul-menu__btn")
+								a(href="#" class="mainMenu__link")
+									img(src="img/magnifier.png" alt="error")
+		header
+			.container
+				h2(class="header__description") Creative Template
+				h1(class="header__name")!='WELCOME <br>TO MOGO'
+				div(class="white stick")
+				a(href="#" class="header__learn_more") LEARN MORE
+				.header__sticks
+					for i in ["1","2","3","4"]
+						.header__stick
+				ul(class="header__plan")
+					li(class="header__plan__bottom")!='01 <span class="plan__span">INTRO</span>'
+					li(class="header__plan__bottom")!='02 <span class="plan__span">WORK</span>'
+					li(class="header__plan__bottom")!='03 <span class="plan__span">ABOUT</span>'
+					li(class="header__plan__bottom")!='04 <span class="plan__span">CONTACTS</span>'
+
+							//- story
+		.container
+			+begining_block("What we do", "STORY ABOUT US")
+			p(class="story__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt neque alias blanditiis, impedit doloribus id possimus laboriosam est inventore eveniet fugit at ducimus, deserunt assumenda vel et repudiandae aut deleniti.
+			.story__images
+				.story__first_image
+					.blind
+						.story__first_image_detailed_content
+							img(src="img/users.png", alt="error")
+						p(class="story__plus") SUPER TEAM
+				.story__second_image
+					.blind
+						.story__first_image_detailed_content
+							img(src="img/users.png", alt="error")
+						p(class="story__plus") PROFESIONAL TEAM
+				.story__third_image
+					.blind
+						.story__first_image_detailed_content
+							img(src="img/users.png", alt="error")
+						p(class="story__plus") MEGA TEAM
+						
+						//- statistics
+		.statistics
+			div(class="container flex")
+				.statistics__block
+					.statistics__number 42
+					.statistic__name WEB PROJECTS
+				.statistics__block
+					.statistics__number 123
+					.statistic__name HAPPY CLIENT
+				.statistics__block
+					.statistics__number 15
+					.statistic__name AWARD WINNER
+				.statistics__block
+					.statistics__number 99
+					.statistic__name CUP OF COFFEE
+				.statistics__block
+					.statistics__number 24
+					.statistic__name MEMBERS
+
+					//- works
+		div(class="container add-margin")
+			+begining_block("We work with", "AMAZING SERVICES")
+			ul(class="works__list")
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/photography.png", alt="error")
+					h4(class="works__haracter") PHOTOGRAPHY
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/web_design.png", alt="error")
+					h4(class="works__haracter") WEB DESIGN
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/creativity.png", alt="error")
+					h4(class="works__haracter") CREATIVITY
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+			ul(class="works__list")
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/seo.png", alt="error")
+					h4(class="works__haracter") SEO
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/seo.png" alt="error")
+					h4(class="works__haracter") CSS/HTML
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+				li(class="works__block")
+					.works__img
+						img(src="img/we_work_with/digital.png", alt="error")
+					h4(class="works__haracter") DIGITAL
+					p(class="works__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta
+
+					//- devices
+		.devices
+			.container
+				+begining_block("For all devices", "UNIQUE DESIGN")
+				.devices__image
+					.devices__image_block
+						img(class="devices__table" src="img/for_all_devices/gadjet.png", alt="error")
+						img(class="devices__iphone" src="img/for_all_devices/iphone.png", alt="error")
+
+					//- comment
+		.comment
+			div(class="container flex")
+				img(class="comment__img" src="img/comment.png", alt="error")
+				.comment__block
+					p(class="comment__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, libero voluptates. Cumque consectetur vel voluptate suscipit pariatur! Voluptate officia ipsa officiis vero, est tempore quas possimus nulla mollitia id, blanditiis.
+					.comment__autor
+						.comment__stick
+						span(class="comment__autor__name") Jon Doe
+					
+					//- employees
+		.container
+			+begining_block("Who we are", "MEET OUR TEAM")
+			p(class="employees__lorem") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit, blanditiis voluptate doloremque nihil, fuga cum voluptatem dignissimos repellendus, laudantium laboriosam deserunt ea dicta facilis, hic eligendi. Sapiente, minus, quidem!
+			.employees__field
+				.employees__block
+					.employees__first-img
+						+employees()
+					.signature__name MATTHEW DIX
+					.signature__profession Graphic Design
+				.employees__block
+					.employees__second-img
+						+employees()
+					.signature__name CRISTOPHER CAMBELL
+					.signature__profession Branding/UX Design
+				.employees__block
+					.employees__third-img
+						+employees()
+					.signature__name MICHAEL FERTIG
+					.signature__profession Developer
+						
+						//- logos
+		.logos
+			div(class="container logos__flex")
+				for i in ["1","2","3","4","5","6"]
+					.img
+						img(src= "img/logo"+i+".png", alt="error")
+
+						//- work
+		.container
+			+begining_block("What we do", "SOME OF OUR WORK")
+			p(class="work__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cumque facilis qui, debitis cupiditate. Iusto ea perspiciatis atque vel minus magni recusandae quae quo mollitia architecto maxime nobis incidunt, deleniti.
+			.work__block
+				.work__first_image_block
+					for i in [["work__first_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"],["work__second_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"],["work__third_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"],["work__forth_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"]]
+						div(class=i[0])
+							.work__mask
+								img(class="work__mask_img" src="img/some_of_our_work/picture.png" alt="error")
+								p(class="work__topic") #{i[1]}
+								p(class="work__description") #{i[2]}
+				.work__second_image_block
+					for i in [["work__first_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"],["work__second_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"],["work__third_img","CREATIVITY DESIGNED","Lorem ipsum dolor sit amet"]]
+						div(class=i[0])
+							.work__mask
+								img(class="work__mask_img" src="img/some_of_our_work/picture.png" alt="error")
+								p(class="work__topic") #{i[1]}
+								p(class="work__description") #{i[2]}
+
+					//- Second comment
+		.comment
+			div(class="container flex")
+				img(class="second_comment_img" src="img/second_comment.jpg" alt="error")
+				.comment__block
+					p(class="comment__content") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, libero voluptates. Cumque consectetur vel voluptate suscipit pariatur! Voluptate officia ipsa officiis vero, est tempore quas possimus nulla mollitia id, blanditiis.
+					.comment__autor
+						.comment__stick
+						.comment__autor__name Joshua Earle
+
+						//- Reviews
+		.Reviews
+			.container
+				+begining_block("Happy clients", "WHAT PEOPLE SAY")
+				ul(class="Reviews__main_block")
+					+Reviews("Reviews__first_img","GEORGE DIX","Graphic Design","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta")
+					+Reviews("Reviews__second_img","ARNOLD WOKER","Developer","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta")
+				ul(class="Reviews__main_block margin-zero")
+					+Reviews("Reviews__third_img","MATTHEW DIX","Photography","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta")
+					+Reviews("Reviews__forth_img","DON DILLAN","HR","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus praesentium nulla adipisci delectus dignissimos aliquid laborum quasi est repudiandae, dicta")
+
+					//- latest block
+		.container
+			+begining_block("Our stories", "LATEST BLOG")
+			.l_block
+				+story("l_block__first_img", "15", "Jan", "LOREM IPSUM DOLOR SIT AMET", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus consequuntur error, magni quis eum itaque asperiores possimus ullam.","542","17")
+				+story("latest_second_blog_content_img", "15", "Jan", "LOREM IPSUM DOLOR SIT AMET", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus consequuntur error, magni quis eum itaque asperiores possimus ullam.","542","17")
+				+story("latest_third_blog_content_img", "15", "Jan", "LOREM IPSUM DOLOR SIT AMET", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus consequuntur error, magni quis eum itaque asperiores possimus ullam.","542","17")
+		script(src="libs/jquery/dist/jquery.min.js")
+		script(src="https://use.fontawesome.com/9025ffce3b.js")
+		script(type="text/javascript" src="js/main.js")

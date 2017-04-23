@@ -245,6 +245,10 @@ header{
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
+	@media only screen and (max-width : 480px){
+    	height: 100%;
+    	padding-bottom: 10px;
+  	}
 	&::before{
 	content: " ";
 	width: 100%;
